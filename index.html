@@ -222,8 +222,10 @@
   .ctrl .ch{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:4px;}
   .ctrltitle{font-weight:600;font-size:14px;color:var(--txt);}
   .ctrl select{background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--txt);padding:8px 10px;font-family:"IBM Plex Sans",sans-serif;font-size:13px;margin:4px 0;}
-  .ctrl textarea{width:100%;box-sizing:border-box;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--txt);padding:8px 10px;font-size:13px;min-height:42px;resize:vertical;margin-top:6px;font-family:"IBM Plex Sans",sans-serif;}
+  .ctrl textarea{width:100%;box-sizing:border-box;background:var(--bg);border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:8px;color:var(--txt);padding:8px 10px;font-size:13px;min-height:62px;resize:vertical;margin-top:0;font-family:"IBM Plex Sans",sans-serif;}
   .ctrl textarea:focus,.ctrl select:focus{outline:none;border-color:var(--accent);}
+  .notewrap{margin-top:11px;}
+  .notelbl{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--txt-faint);margin-bottom:5px;}
   .coming{color:var(--txt-dim);font-size:14px;padding:34px;text-align:center;border:1px dashed var(--line);border-radius:12px;}
   .ctrlref{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--accent);}
   .exbtn{background:none;border:0;color:var(--accent);cursor:pointer;font-size:12px;padding:2px 0;font-family:"IBM Plex Mono",monospace;border-bottom:1px dotted var(--accent);margin:2px 0 8px;display:inline-block;}
@@ -358,8 +360,10 @@
       <a class="famcard" href="https://silvestroparisi.github.io/FirstFew/" target="_blank" rel="noopener"><span class="famname">First<span class="ac">Few</span></span><span class="famtag" id="famFirst"></span></a>
       <a class="famcard" href="https://silvestroparisi.github.io/FixFew/" target="_blank" rel="noopener"><span class="famname">Fix<span class="ac">Few</span></span><span class="famtag" id="famFix"></span></a>
       <a class="famcard" href="https://silvestroparisi.github.io/MaskFew/" target="_blank" rel="noopener"><span class="famname">Mask<span class="ac">Few</span></span><span class="famtag" id="famMask"></span></a>
-      <a class="famcard" href="https://silvestroparisi.github.io/ScrubFew/" target="_blank" rel="noopener"><span class="famname">Scrub<span class="ac">Few</span></span><span class="famtag" id="famScrub"></span></a>
       <a class="famcard" href="https://silvestroparisi.github.io/AskFew/" target="_blank" rel="noopener"><span class="famname">Ask<span class="ac">Few</span></span><span class="famtag" id="famAsk"></span></a>
+      <a class="famcard" href="https://silvestroparisi.github.io/ScrubFew/" target="_blank" rel="noopener"><span class="famname">Scrub<span class="ac">Few</span></span><span class="famtag" id="famScrub"></span></a>
+      <a class="famcard" href="https://silvestroparisi.github.io/RopaFew/" target="_blank" rel="noopener"><span class="famname">Ropa<span class="ac">Few</span></span><span class="famtag" id="famRopa"></span></a>
+      <a class="famcard" href="https://silvestroparisi.github.io/CloseFew/" target="_blank" rel="noopener"><span class="famname">Close<span class="ac">Few</span></span><span class="famtag" id="famClose"></span></a>
     </div>
   </div>
 
@@ -463,6 +467,7 @@ const I18N={
   st_no:`Not implemented`,
   st_na:`N/A`,
   notePh:`Notes / evidence…`,
+  noteLbl:`Evidence — what you've implemented`,
   examples:`ⓘ Practical examples`,
   expandAll:`⊕ Expand all`,
   collapseAll:`⊖ Collapse all`,
@@ -483,10 +488,12 @@ const I18N={
   hoCta:`Open RopaFew →`,
   famlyH:`The rest of the Few toolkit`,
   famFirst:`Prioritize the few that matter.`,
-  famFix:`Fix the few — verified.`,
+  famFix:`Fix the few that matter.`,
   famMask:`Mask the few that expose you.`,
-  famScrub:`Strip the few traces you can't see.`,
   famAsk:`A private AI, in your browser.`,
+  famScrub:`Strip the few traces you can't see.`,
+  famRopa:`Your Article 30 register, fast.`,
+  famClose:`Close the few gaps that matter.`,
   footer:`Built by <b style="color:var(--txt)">Silvestro Parisi</b> · free &amp; open source · runs entirely in your browser — no upload, no tracking.<div style="margin-top:9px">A self-assessment — not an audit, certification or legal advice.</div><div style="margin-top:9px">More from me on <a href="https://github.com/silvestroparisi" target="_blank" rel="noopener">github.com/silvestroparisi</a></div>`,
   m_h1:`How GapFew works`,
   m_p1:`Choose a framework, fill in who's assessing, then mark each control Implemented / Partial / Not implemented / N/A and add notes. GapFew computes your coverage live and highlights the gaps.`,
@@ -558,6 +565,7 @@ const I18N={
   st_no:`Non implementato`,
   st_na:`N/A`,
   notePh:`Note / evidenze…`,
+  noteLbl:`Evidenza — cosa hai implementato`,
   examples:`ⓘ Esempi pratici`,
   expandAll:`⊕ Espandi tutto`,
   collapseAll:`⊖ Comprimi tutto`,
@@ -578,10 +586,12 @@ const I18N={
   hoCta:`Apri RopaFew →`,
   famlyH:`Il resto del toolkit Few`,
   famFirst:`Prioritizza i pochi che contano.`,
-  famFix:`Sistema i pochi — verificati.`,
+  famFix:`Sistema i pochi che contano.`,
   famMask:`Maschera i pochi che ti espongono.`,
-  famScrub:`Cancella le poche tracce nascoste.`,
   famAsk:`Un'AI privata, nel browser.`,
+  famScrub:`Cancella le poche tracce nascoste.`,
+  famRopa:`Il tuo registro art. 30, in fretta.`,
+  famClose:`Chiudi le poche lacune che contano.`,
   footer:`Creato da <b style="color:var(--txt)">Silvestro Parisi</b> · gratis e open source · gira interamente nel tuo browser — nessun upload, nessun tracciamento.<div style="margin-top:9px">È un'autovalutazione — non un audit, una certificazione o consulenza legale.</div><div style="margin-top:9px">Altro da me su <a href="https://github.com/silvestroparisi" target="_blank" rel="noopener">github.com/silvestroparisi</a></div>`,
   m_h1:`Come funziona GapFew`,
   m_p1:`Scegli un framework, indica chi valuta, poi segna ogni controllo Implementato / Parziale / Non implementato / N/A e aggiungi note. GapFew calcola la copertura in tempo reale ed evidenzia le lacune.`,
@@ -649,7 +659,7 @@ document.addEventListener('click',e=>{ const r=e.target.closest?e.target.closest
 function applyLang(){
  const t=T();
  byId('btnHow').textContent=t.how;
- const direct=['pv_eye','pv_h','pv_p','pvs1h','pvs1p','pvs2h','pvs2p','pvs3h','pvs3p','pv_cta','heroEyebrow','heroH1a','heroH1b','heroSub','heroCta1','heroCta2','b1eye','b1h','s1h','s2h','s3h','b2eye','b2h','b3eye','b3h','appEye','appH','lblFw','hdrH','lblOrg','lblAssessor','lblDate','scoreH','btnDemo','btnGuide','btnSave','btnLoad','btnCsv','btnPrint','btnReset','famlyH','famFirst','famFix','famMask','famScrub','famAsk','m_h1','m_h2','m_h3','m_h4','hoEyebrow','hoCta'];
+ const direct=['pv_eye','pv_h','pv_p','pvs1h','pvs1p','pvs2h','pvs2p','pvs3h','pvs3p','pv_cta','heroEyebrow','heroH1a','heroH1b','heroSub','heroCta1','heroCta2','b1eye','b1h','s1h','s2h','s3h','b2eye','b2h','b3eye','b3h','appEye','appH','lblFw','hdrH','lblOrg','lblAssessor','lblDate','scoreH','btnDemo','btnGuide','btnSave','btnLoad','btnCsv','btnPrint','btnReset','famlyH','famFirst','famFix','famMask','famAsk','famScrub','famRopa','famClose','m_h1','m_h2','m_h3','m_h4','hoEyebrow','hoCta'];
  direct.forEach(k=>{ const e=byId(k); if(e) e.textContent=t[k]; });
  ['b1p','s1p','s2p','s3p','b2p','b3p','dataNote','footer','m_p1','m_p2','m_p3','m_p4','hoH','hoP'].forEach(id=>{ const e=byId(id); if(e) e.innerHTML=artify(t[id]); });
  populateFw(); renderCtrls(); updateToggleLabel();
@@ -686,7 +696,7 @@ function ctrlCard(c){
    ${fhelp(L(c.d))}
    ${EX[c.id]?`<button class="exbtn" data-ex="${c.id}">${esc(t.examples)}</button>`:''}
    <select class="statussel" data-id="${c.id}">${opts}</select>
-   <textarea data-id="${c.id}" data-f="note" placeholder="${esc(t.notePh)}">${esc(a.note||'')}</textarea>
+   <div class="notewrap"><label class="notelbl">${esc(t.noteLbl)}</label><textarea data-id="${c.id}" data-f="note" placeholder="${esc(t.notePh)}">${esc(a.note||'')}</textarea></div>
  </div>`;
 }
 function areaPct(ar){ let sum=0,n=0; ar.controls.forEach(c=>{ const st=(ANS[c.id]||{}).status||''; if(st==='imp'){sum+=1;n++;} else if(st==='part'){sum+=0.5;n++;} else if(st==='no'){n++;} }); return n?Math.round(sum/n*100):null; }
